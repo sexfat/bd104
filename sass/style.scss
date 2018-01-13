@@ -1,0 +1,126 @@
+@import 'base/var';
+@import 'base/header';
+.box {
+    width: $num;
+    height: $num;
+    color: $color;
+    span {
+        margin-top: 10px;
+        img {
+            width: $num;
+        }
+    }
+    h1 {
+        font-size: 30px;
+        .title {
+            font-size: 20px;
+            .h2 {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+//偽類
+a:hover {
+    color: #f20;
+}
+
+.box2 {
+    &:hover {
+        color: #f30;
+    }
+    &:before {
+        content: '';
+    }
+}
+
+//mixin
+
+
+
+
+
+
+
+@mixin margins($fontsize, $nums) {
+    .title {
+        margin-top: $nums;
+        margin-left: $nums;
+        margin-right: $nums;
+        margin-bottom: $nums;
+        font-size: $fontsize;
+    }
+}
+
+@include margins(36px, 20px);
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.btn {
+    @include border-radius(20px);
+}
+
+@mixin titles($nums) {
+    @for $i from 1 through $nums {
+        .col_#{$i} {
+            width: 10px * $i;
+        }
+    }
+}
+
+
+
+@include titles(1);
+
+
+
+@mixin good(){
+    font-size: 10px;
+  }
+  
+  .box3 {
+      @include good();
+  }
+
+  @mixin goods($num){
+    font-size: $num;
+  }
+  
+  .box3 {
+      @include goods(20px);
+  }
+
+
+  @mixin goods($num , $margin){
+    font-size: $num;
+    margin: $margin;
+  }
+  
+  .box4 {
+      @include goods(20px , 40px);
+  }
+
+
+  @mixin goodss($num , $margin:50px){
+    font-size: $num;
+    margin: $margin;
+  }
+  
+  .box4 {
+      @include goodss(20px , 60px);
+  }
+
+
+  @mixin goodsss($num:null , $margin:null){
+    font-size: $num;
+    margin: $margin;
+  }
+  
+  .box4 {
+      @include goodsss(30px);
+  }
