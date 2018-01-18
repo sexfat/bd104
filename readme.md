@@ -1,7 +1,12 @@
 # node.js  安裝
-- version : 
+- version :  
+  node 8.9.4
+
 - 安裝網址 : 
+  https://nodejs.org/en/
+
 - 安裝方式 : 
+  下載安裝 一鍵安裝到底
 
 # ruby 安裝
 - version : 
