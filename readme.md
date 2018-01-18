@@ -1,30 +1,40 @@
 # node.js  安裝
-- version :  
-  node 8.9.4
+- version : node 8.9.4
 
-- 安裝網址 : 
-  https://nodejs.org/en/
+- 安裝網址 : https://nodejs.org/en/
 
-- 安裝方式 : 
-  下載安裝 一鍵安裝到底
+- 安裝方式 : 下載安裝 一鍵安裝到底
 
 # ruby 安裝
-- version : 
-- 安裝網址 :
-- 安裝方式 :
+- version : Ruby 2.4.3-1 (x86) 
+
+- 安裝網址 : https://rubyinstaller.org/
+
+- 安裝方式 : 下載安裝  
+  注意事項 : 
 
 # git 安裝
-- version : 
-- 安裝網址 :
-- 安裝方式 :
+- version : 2.15.1
+
+- 安裝網址 : https://git-scm.com/
+
+- 安裝方式 : 下載安裝 一鍵安裝到底
 
 
 # sass 安裝
-- version : 
-- 安裝網址 :
+- version : 3.5.3
+
+- 安裝網址 : http://sass-lang.com/install
+
 - 安裝方式 :
-1. Win
-2. Mac
+  1. Win  
+  >Open Ruby command line powershell  
+  >Type `gem install sass`  
+  
+  2. Mac
+  > Open your Terminal or Command Prompt  
+  > Type `gem install sass` or `sudo gem install sass`
+
 
 # gulp  安裝
 - version : 
@@ -33,13 +43,16 @@
 `https://www.npmjs.com/package/gulp-cli/tutorial`
 
 - 安裝方式 :
-`npm install gulp -D`
+`npm install gulp -g`
 
 # bower 安裝 
-- version : 
-- 安裝網址 :
+- version : 1.8.2
+
+- 安裝網址 : https://bower.io/
+
 - 安裝方式 :
-- 使用方式 :
+> Type `npm install bower -g`
+
 
 
 # CMD 指令
