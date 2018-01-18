@@ -11,7 +11,7 @@
 - 安裝網址 : https://rubyinstaller.org/
 
 - 安裝方式 : 下載安裝  
-  注意事項 : 
+  注意事項 :   
 
 # git 安裝
 - version : 2.15.1
@@ -36,14 +36,14 @@
   > Type `gem install sass` or `sudo gem install sass`
 
 
-# gulp  安裝
+# gulp安裝
 - version : 
 
 - 安裝網址 :
 `https://www.npmjs.com/package/gulp-cli/tutorial`
 
 - 安裝方式 :
-`npm install gulp -g`
+`npm install gulp-cli -g`
 
 # bower 安裝 
 - version : 1.8.2
@@ -57,27 +57,27 @@
 
 # CMD 指令
 
->sudo 管理者權限
->cd 到下一層目錄
->cd.. 回到上一層
->ls    mac查詢指令 
->dir   win 查詢指令
->node -v  node 版本  
->sass -v  sass 版本
->gulp -v  gulp 版本  
+>sudo 管理者權限  
+>cd 到下一層目錄  
+>cd.. 回到上一層  
+>ls    mac查詢指令   
+>dir   win 查詢指令  
+>node -v  node 版本    
+>sass -v  sass 版本  
+>gulp -v  gulp 版本    
 
 
 # 自動化程式gulp 安裝
-- version : 
-- 安裝網址 :
-- 安裝方式 :
 
 ## 1. gulp 安裝
 
 
+
+
+
 ## 2.gulp-sass
 
-``
+
 
 ### 安裝網址 
 `https://www.npmjs.com/package/gulp-sass`
