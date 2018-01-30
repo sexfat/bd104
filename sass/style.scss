@@ -1,5 +1,8 @@
 @import 'base/var';
+@import 'mixin/mixins';
+// @import 'base/reset';
 @import 'base/header';
+@import 'page/large';
 .box {
     width: $num;
     height: $num;
@@ -36,23 +39,6 @@ a:hover {
 }
 
 //mixin
-
-
-
-
-
-
-
-@mixin margins($fontsize, $nums) {
-    .title {
-        margin-top: $nums;
-        margin-left: $nums;
-        margin-right: $nums;
-        margin-bottom: $nums;
-        font-size: $fontsize;
-    }
-}
-
 @include margins(36px, 20px);
 @mixin border-radius($radius) {
     -webkit-border-radius: $radius;
@@ -73,54 +59,386 @@ a:hover {
     }
 }
 
-
-
 @include titles(1);
-
-
-
-@mixin good(){
+@mixin good() {
     font-size: 10px;
-  }
-  
-  .box3 {
-      @include good();
-  }
+}
 
-  @mixin goods($num){
+.box3 {
+    @include good();
+}
+
+@mixin goods($num) {
     font-size: $num;
-  }
-  
-  .box3 {
-      @include goods(20px);
-  }
+}
 
+.box3 {
+    @include goods(20px);
+}
 
-  @mixin goods($num , $margin){
-    font-size: $num;
-    margin: $margin;
-  }
-  
-  .box4 {
-      @include goods(20px , 40px);
-  }
-
-
-  @mixin goodss($num , $margin:50px){
+@mixin goods($num, $margin) {
     font-size: $num;
     margin: $margin;
-  }
-  
-  .box4 {
-      @include goodss(20px , 60px);
-  }
+}
 
+.box4 {
+    @include goods(20px, 40px);
+}
 
-  @mixin goodsss($num:null , $margin:null){
+@mixin goodss($num, $margin:50px) {
     font-size: $num;
     margin: $margin;
-  }
-  
-  .box4 {
-      @include goodsss(30px);
-  }
+}
+
+.box4 {
+    @include goodss(20px, 60px);
+}
+
+@mixin goodsss($num:null, $margin:null) {
+    font-size: $num;
+    margin: $margin;
+}
+
+.box4 {
+    @include goodsss(30px);
+}
+
+//   .wrapper {
+//    @include  margin-autos(10px , 20px);
+//   }
+$wd: 10px;
+$hi: 20px;
+@mixin aa($pl, $pr) {
+    width: $pl;
+    height: $pr;
+}
+
+span {
+    @include aa($wd, $hi);
+}
+
+h1 {
+    font-size: 180px;
+    color: rgb(4, 244, 40);
+}
+
+//跳脫符號
+@mixin box($name, $num) {
+    #{$name} {
+        margin: $num;
+        width: 100px;
+        background-color: #f20;
+        @content;
+    }
+}
+
+@include box('.box', 10px);
+@include box('.box1', 20px);
+@include box('wrappers', 100px);
+@include box('header', 100px);
+// @content
+.box {
+    @include box('span', 100px) {
+        color: #fff;
+    }
+    ;
+}
+
+$width :100px;
+$height: 130px;
+.btn {
+    width: $width;
+    height: $height;
+}
+
+%btn {
+    width: $width;
+    height: $height;
+}
+
+.btn1 {
+    @extend .btn;
+    background-color: #f30;
+}
+
+.btn2 {
+    @extend %btn;
+    background-color: rgb(119, 242, 11);
+}
+
+.btn3 {
+    @extend %btn;
+    background-color: rgb(3, 203, 238);
+}
+
+//運算式
+.box5 {
+    width: 10 + 2px + 2;
+    height: 10px - 12px;
+    font-size: 10 * 2px;
+    font: (10px / 2);
+}
+
+$size: 10px;
+$i: 2;
+.box6 {
+    //無條件捨去 
+    font-size: floor(10.45px); //四捨五入
+    font-size: round(10.55px); //無條件捨去
+    font-size: ceil(10.1px);
+}
+
+$fontbase: 16px;
+body {
+    font-size: $fontbase;
+}
+
+h1 {
+    font-size: floor($fontbase * 5.4);
+}
+
+;
+h2 {
+    font-size: ceil($fontbase * 4.3);
+}
+
+;
+h3 {
+    font-size: $fontbase * 3;
+}
+
+;
+h4 {
+    font-size: $fontbase * 2;
+}
+
+;
+h5 {
+    font-size: $fontbase * 1.5;
+}
+
+;
+$width: 9;
+.wrapper {
+    @if $width>=10 {
+        width: $width;
+    }
+    @else {
+        width: $width * 2
+    }
+}
+
+//theme
+@mixin theme($theme) {
+    @if $theme==blue {
+        .theme_#{$theme} {
+            color: blue;
+            @content;
+        }
+    }
+    @else if $theme==yellow {
+        .theme_#{$theme} {
+            color: yellow;
+            @content;
+        }
+    }
+    @else {
+        .theme {
+            color: #f20;
+            @content;
+        }
+    }
+}
+
+@include theme(white) {
+    margin-top: 10px;
+}
+
+;
+//for
+// @for $i from 1 through 10 {
+// }
+@mixin boxwidth($num) {
+    @for $i from 1 through $num {
+        .box_#{$i} {
+            width: 10px * $i
+        }
+    }
+}
+
+@include boxwidth(100);
+@mixin text($num) {
+    @for $i from 1 through $num {
+        h#{$i} {
+            font-size: 10px * $i
+        }
+    }
+}
+
+@include text(6);
+//push
+// .push-left-10 {
+//     margin-left: 10px
+// }
+// .push-left-9 {
+//     margin-left: 9px
+// }
+@mixin push($dis, $num) {
+    @for $i from 1 through $num {
+        .push-#{$dis}-#{$i} {
+            margin-#{$dis}: 1px * $i;
+            position: relative;
+            #{$dis}: 1px * $i
+        }
+    }
+}
+
+// @include push (top, 100);
+// @include push (right, 100);
+//
+// .col-md-6 {
+//     width: 50%
+// }
+@mixin grid ($num) {
+    @for $i from 1 through $num {
+        .col-md-#{$i} {
+            width: ($i /$num) *100%;
+        }
+    }
+}
+
+@include grid(6);
+//RWD
+$small: 767px;
+$medium-max: 768px;
+$medium-min: 899px;
+$large: 1366px;
+//函式 
+$map: ( key: 1, key1: 2, key2: 3);
+.obx {
+    margin: map-get($map, key2);
+}
+
+@mixin photo($list) {
+    @each $man in $list {
+        .photo-#{$man} {
+            background:url('images/#{$man}.jpg');
+            @content;
+        }
+    }
+}
+
+.footer {
+    @include photo(a001 a002 a003 a004 a005 allen) {
+        width: 300px;
+        height: 200px;
+    }
+    ;
+}
+
+.wrapper {
+    @include photo(b001 b002 b003 b004) {
+        width: 500px;
+        height: 700px;
+    }
+    ;
+}
+
+$list: a001 a002;
+.box {
+    width: length($list);
+    padding: nth($list, 1);
+}
+
+$map: ( red: #f20,
+green: rgb(80, 255, 5),
+yellow: rgb(255, 217, 2),
+white: #fff,
+);
+.box {
+    color: map-get($map, white);
+}
+
+//////////
+@mixin rwd ($breakpoint) {
+    @if $breakpoint=="small" {
+        @media all and (max-width: $small) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="medium" {
+        @media all and(max-width: $medium-max) and (min-width: $medium-min) {
+            @content;
+        }
+    }
+    @else if $breakpoint=="desktop" {
+        @media all and (min-width: $large) {
+            @content;
+        }
+    }
+}
+
+@include rwd(small) {
+    .box {
+        margin-top: 10px;
+    }
+}
+
+@include rwd(medium) {
+    .box {
+        margin-top: 10px;
+    }
+}
+
+@include rwd(desktop) {
+    .box {
+        margin-top: 10px;
+    }
+}
+
+;
+/////
+$breakpoint :( small :480px,
+medium: 720px,
+destop: 988px,
+);
+@mixin responds($respond) {
+    @each $viewpoint,
+    $num in $breakpoint {
+        @if $respond==$viewpoint {
+            @media all and (min-width: $num) {
+                @content;
+            }
+        }
+    }
+}
+
+@include responds (medium) {
+    .box {
+        margin: 100px;
+    }
+}
+
+// $aa: 8;
+// $bb: 4px;
+// @while $aa > 0 {
+//     .box-#{$aa} {
+//         width: $bb + $aa;
+//     }
+//     $aa: $aa - 1;
+// }
+
+
+@mixin colors-lights($color, $amount) {
+    @for $i from 1 through $amount {
+        .color_lightbox_#{$i} {
+            background-color: lighten($color, $i * 3);
+            width: 300px;
+            height: 50px;
+        }
+    }
+}
+
+
+
+@include colors-lights (rgba(55, 0, 255, 0.822), 10);
