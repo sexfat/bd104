@@ -13,15 +13,17 @@
 
 .section1 {
     background-color: #000000;
-    color: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
     text-align: center;
+    padding-top: 300px;
     .title {
-        margin-top: 400px;
         width:  500px;
-       @include marginauto();
+        @include marginauto();
+        font-size: 50px
     }
     .desc {
-      @extend .title ;    
+      @include marginauto();  
+      color: rgb(255, 255, 255);    
     }
 
 

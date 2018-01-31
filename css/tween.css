@@ -47,10 +47,15 @@ table {
 
 .section1 {
   background-color: #000000;
-  color: #050505;
-  text-align: center; }
-  .section1 .title, .section1 .desc {
-    margin-top: 400px;
+  color: white;
+  text-align: center;
+  padding-top: 300px; }
+  .section1 .title {
     width: 500px;
     margin-left: auto;
-    margin-right: auto; }
+    margin-right: auto;
+    font-size: 50px; }
+  .section1 .desc {
+    margin-left: auto;
+    margin-right: auto;
+    color: white; }
