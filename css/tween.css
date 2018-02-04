@@ -92,3 +92,39 @@ body {
   background-color: #32c90c;
   top: 500px !important;
   left: 200px !important; }
+
+.section2 .btn {
+  width: 100px;
+  height: 20px;
+  padding: 10px;
+  border: 1px solid #f20;
+  cursor: pointer; }
+
+.section3 .boxscroll {
+  position: relative;
+  width: 500px;
+  height: 50px;
+  background-color: aquamarine;
+  top: 300px;
+  left: 400px; }
+
+.section_5 {
+  overflow: hidden; }
+  .section_5 .bg_all {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://placem.at/places");
+    background-color: #000;
+    background-size: cover;
+    transform-origin: center;
+    transform: scale(1.08);
+    transition: transform 3s ease-out;
+    will-change: transform; }
+    .section_5 .bg_all.bgc {
+      transform: scale(1); }
+
+.section_6 .videos {
+  overflow: hidden; }
+  .section_6 .videos #bgvid {
+    width: 100%;
+    height: 100%; }
