@@ -39,7 +39,12 @@ body {
 }
 
 .section2 {
-
+    .area{
+      width:900px;
+      height: 600px;
+      background-color: blueviolet ;
+      @include marginauto();
+    }
     .boxs {
         width: 300px;
         height: 50px;
@@ -50,8 +55,16 @@ body {
     .box01 
     {
         background-color: aqua;
+        top: 100px !important;
+        left: 200px !important; 
     }
 
+    .box02
+    {
+        background-color: rgb(50, 201, 12);
+        top: 500px !important;
+        left: 200px !important; 
+    }
 
 
 
