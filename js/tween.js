@@ -184,6 +184,20 @@ console.log('video ok');
 
 
 
+//pin
+var scene_sticky = new ScrollMagic.Scene({
+    triggerElement: "#trigger5",
+    offset: '50',
+    duration: '400'
+})
+.setPin('#sticky')
+.addIndicators()
+.addTo(controller);
+
+
+
+
+
   
 
 });

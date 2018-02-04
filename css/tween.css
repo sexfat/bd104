@@ -127,4 +127,14 @@ body {
   overflow: hidden; }
   .section_6 .videos #bgvid {
     width: 100%;
-    height: 100%; }
+    height: 100vh; }
+
+.section_7 {
+  padding-top: 120px;
+  background-color: #73db7a; }
+  .section_7 .sticky {
+    width: 120px;
+    height: 230px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #faff00; }
